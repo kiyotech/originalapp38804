@@ -12,7 +12,7 @@
 | first_name_kana    | string  | null: false               |
 | last_name_kana     | string  | null: false               |
 | birth_date         | date    | null: false               |
-| self_introduction  | text    | null: false               |
+| self_introduction  | text    |                           |
 
 ### Association   
 
