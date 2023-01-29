@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2023_01_27_090952) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname", null: false
-    t.string "farst_name", null: false
+    t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
