@@ -82,6 +82,14 @@
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">自己紹介（任意）</label>
+      </div>
+      <div class='input-name-wrap'>
+        <%= f.text_area :self_introduction, class:"self-introduction", id:"self-introduction", placeholder:"例) 釣り歴：23年。ターゲット：シーバス。旧江戸川で毎晩動画配信してます。" %>
+      </div>
+    </div>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
   <div class="form-group">
