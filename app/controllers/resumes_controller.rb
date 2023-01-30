@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   
   def index
     @resumes = Resume.all
@@ -13,9 +13,15 @@ class ResumesController < ApplicationController
     Resume.create(resume_params)
   end
 
+  def edit
+  end
+  
+  def show
+  end
+
   private
   def resume_params
-    params.require(:resume).permit(:title, :imag, :resume_text, :price).merge(user_id: current_user.id)
+    params.require(:resume).permit(:title, :image, :resume_text, :price).merge(user_id: current_user.id)
   end
   
 end
