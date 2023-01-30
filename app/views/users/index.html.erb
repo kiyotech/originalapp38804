@@ -1,21 +1,18 @@
+<%= render "shared/header" %>
+<div class='main'>
 
-<div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
-    </ul>
-    <ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, '#', class: "user-nickname" %></li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>投稿一覧</h2>
+    <ul class='item-lists'>
+      <%= render partial: 'resumes/resume', collection: @resumes %>
     </ul>
   </div>
-  <div>マイページ</div>
-  <div>ここに自分の知識一覧表示</div>
-  <div>
-  <%= link_to '新規投稿のリンク', '#', class: "resume-write" %></li>
-  </div>
+  <%# /商品一覧 %>
+</div>
+<%= link_to(new_resume_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+  <%= image_tag 'fishing_bass.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>
