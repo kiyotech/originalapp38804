@@ -158,3 +158,15 @@
   text-align: right;
   cursor: pointer;
 }
+
+.self-introduction {
+  width: 150%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+}
