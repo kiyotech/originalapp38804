@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NFTSWKuGLYvwrcINHY4m" name="ページ1">
-        <mxGraphModel dx="966" dy="1491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="360" dy="1491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -197,7 +197,7 @@
                         <mxPoint x="526" y="-203" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="77" value="知識購入ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="77" value="知識詳細ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="564" y="-223" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="79" edge="1">
@@ -205,13 +205,13 @@
                         <mxPoint x="662" y="-203" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="79" value="知識詳細ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="79" value="知識購入ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="700" y="-223" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="81" value="ユーザー情報編集ページ" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="81" value="ユーザー情報編集ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="208" y="-120" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="82" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1">
+                <mxCell id="82" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="178" y="-103" as="targetPoint"/>
                         <mxPoint x="208" y="-103" as="sourcePoint"/>
