@@ -38,10 +38,11 @@
 
 ## orders テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| resume      | references | null: false, foreign_key: true |
-| user        | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| phone_number | string     | null: false                    |
+| resume       | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
