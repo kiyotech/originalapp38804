@@ -53,3 +53,4 @@ class ResumesController < ApplicationController
     @resume = Resume.find(params[:id])
   end
 end
+
