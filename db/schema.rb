@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2023_01_30_042105) do
     t.text "resume_text", null: false
     t.integer "price", null: false
     t.bigint "user_id", null: false
+    t.text "answer", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_resumes_on_user_id"
