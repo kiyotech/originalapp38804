@@ -4,10 +4,10 @@
 
   </header>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">釣果の入力</h2>
+    <h2 class="items-sell-title">釣果の編集</h2>
     <%= form_with(model: @resume, local: true) do |f| %>
 
-    <%#= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# 商品画像 %>
     <div class="img-upload">
@@ -35,6 +35,13 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :resume_text, class:"items-text", id:"item-info", placeholder:"釣果の要約だけ書いてください。重要なポイントは書かないようにしてください。（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          釣果の本文
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :answer, class:"items-text", id:"item-info", placeholder:"釣果の詳しい状況を記入してください。購入者にのみ公開されます。（必須 10,000文字まで）" ,rows:"7" ,maxlength:"10000" %>
       </div>
     </div>
 
