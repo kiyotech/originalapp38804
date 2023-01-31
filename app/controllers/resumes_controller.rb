@@ -21,7 +21,7 @@ class ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:title, :image, :resume_text, :price).merge(user_id: current_user.id)
+    params.require(:resume).permit(:title, :image, :resume_text, :answer, :price).merge(user_id: current_user.id)
   end
   
 end
