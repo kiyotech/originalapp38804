@@ -22,13 +22,16 @@
 
 ## resumes テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| resume_text | text       | null: false                    |
-| price       | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
-| answer      | text       | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| resume_text   | text       | null: false                    |
+| price         | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| answer        | text       | null: false                    |
+| point_address | string     |                                |
+| latitude      | float      |                                |
+| longitude     | float      |                                |
 
 ### Association
 

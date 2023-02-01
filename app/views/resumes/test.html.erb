@@ -1,0 +1,79 @@
+<h2>gmap</h2>
+<div class="form-group">
+  <%= f.label :point_address, "住所" %>
+<%= f.text_field :point_address %></div>
+<div class="form-group">
+  <!-- buttonをクリックしたらcodeAddressを実行　-->
+<input type="button" value="住所検索" onclick="codeAddress()">
+<div class="row">
+<div class="col-sm-3">
+<div id="map"></div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="row">
+<div class="col-sm-3">
+      <%= f.label :latitude, "緯度" %>
+<%= f.text_field :latitude %></div>
+</div>
+</div>
+<div class="form-group">
+<div class="row">
+<div class="col-sm-3">
+      <%= f.label :longitude, "経度"%>
+<%= f.text_field :longitude %>
+</div>
+</div>
+</div>
+<style>
+#map{
+  height: 400px;
+}
+</style>
+<script>
+  let map
+  let geocoder
+  let marker
+  let uluru
+  function initMap() {
+    geocoder = new google.maps.Geocoder()
+ // 数値が入っていないとマップが非表示になってしまうためnilの場合は0を入れる<br />
+   // contollerにて既存に登録している緯度と経度を変数に入れて渡す<br />
+    uluru = {latitude: <%= @resume.latitude || 0 %>, longitude: <%= @resume.longitude || 0 %>};
+   map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 16,
+      center: uluru
+    });
+   marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      draggable: true   // ドラッグ可能にする<br />
+    });
+// マーカーのドロップ（ドラッグ終了）時のイベント<br />
+    google.maps.event.addListener( marker, 'dragend', function(ev){
+      // イベントの引数evの、プロパティ.latLngが緯度経度。<br />
+      document.getElementById('lat').value = ev.latLng.lat();
+      document.getElementById('lng').value = ev.latLng.lng();
+    });
+  }
+  function codeAddress(){
+    // 入力された住所を取得<br />
+    let inputAddress = document.getElementById('access').value;
+    // geocodingしたあとmapを移動<br />
+    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+      if (status == 'OK') {
+        uluru = results[0].geometry.location;
+ // map.setCenterで地図が移動<br />
+        // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ<br />
+        map.setCenter(uluru);
+        marker.setPosition(uluru);
+        document.getElementById('lat').value = uluru.lat();
+        document.getElementById('lng').value = uluru.lng();
+      } else {
+        alert('該当の住所が見つかりませんでした');
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API'] %>&callback=initMap" async defer></script>

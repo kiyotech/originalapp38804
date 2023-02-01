@@ -36,9 +36,15 @@
         </div>
         <%= f.text_area :resume_text, class:"items-text", id:"item-info", placeholder:"釣果の要約だけ書いてください。重要なポイントは書かないようにしてください。（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
+
 <br>
 <h2>map</h2>
 <br>
+ <%= f.text_field :point_address, id:"address", class: 'form-control', placeholder:"場所を検索" %>
+<input type="button" value="検索" onclick="codeAddress()">
+<div id="display">緯度経度</div>
+<div><%= f.text_field :latitude, class: 'form-control', placeholder:"緯度" %></div>
+<div><%= f.text_field :longitude, class: 'form-control', placeholder:"経度" %></div>
 <div id='map'></div>
 
 <style>
@@ -50,7 +56,7 @@
 
 <script>
 let map
-
+const display = document.getElementById('display')
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
@@ -59,13 +65,30 @@ function initMap(){
     zoom: 12,
   });
 
-  marker = new google.maps.Marker({
-    position:  {lat: 35.64, lng:139.8},
-    map: map
-  });
+ 
 }
+let geocoder
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+       display.textContent = "緯度，経度をそれぞれコピペしてください：" + results[ 0 ].geometry.location
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_API']%>&callback=initMap" async defer></script>
+
       <div class="items-explain">
         <div class="weight-bold-text">
           釣果の本文
