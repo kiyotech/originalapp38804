@@ -36,6 +36,36 @@
         </div>
         <%= f.text_area :resume_text, class:"items-text", id:"item-info", placeholder:"釣果の要約だけ書いてください。重要なポイントは書かないようにしてください。（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
+<br>
+<h2>map</h2>
+<br>
+<div id='map'></div>
+
+<style>
+#map {
+  height: 500px;
+  width: 500px;
+}
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.64, lng:139.8},
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 35.64, lng:139.8},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAP_API']%>&callback=initMap" async defer></script>
       <div class="items-explain">
         <div class="weight-bold-text">
           釣果の本文
