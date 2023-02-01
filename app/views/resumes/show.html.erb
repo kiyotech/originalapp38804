@@ -20,6 +20,41 @@
     <div class="item-explain-box">
       <span><%= @resume.resume_text %></span>
     </div>
+<% if user_signed_in? %>
+  <% if current_user.id == @resume.user_id %>
+    <div class="item-explain-box">
+      <span><%= @resume.point_address %></span>
+    </div>
+<div class="map">
+  <div id="map">
+  </div>
+</div>
+
+<div type="text/javascript">
+<style>
+#map {
+  height: 200px;
+  width: 600px;
+}
+</style>
+  <script>
+    function initMap(){
+      let map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= @resume.latitude %>, lng: <%= @resume.longitude %> },
+      zoom: 12
+      
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API'] %>&callback=initMap" async defer></script>
+
+</div>
+    <div class="item-explain-box">
+      <span><%= @resume.answer %></span>
+    </div>
+    <% else %>
+    <% end %>
+<% end %>
     <% if user_signed_in? %>
       <% if current_user.id == @resume.user_id %>
         <%= link_to "商品の編集", edit_resume_path(@resume.id), method: :get, class: "item-red-btn" %>

@@ -1,0 +1,65 @@
+<%= render "shared/header" %>
+ <h1 class='transaction-title-text2'>
+    ※※一回しか表示されません！！スクリーンショットか印刷をしてください！！！！※※
+    </h1>
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @resume.user.nickname %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @resume.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        ¥ <%= @resume.price.to_s(:delimited) %>
+      </span>
+    </div>
+    <h2 class="name">
+      <%= @resume.title %>
+    </h2>
+    <div class="item-explain-box">
+      <span><%= @resume.resume_text %></span>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @resume.point_address %></span>
+    </div>
+<div class="map">
+  <div id="map">
+  </div>
+</div>
+<span>緯度<%= @resume.latitude %></span>
+<span>経度<%= @resume.longitude %></span>
+
+<div type="text/javascript">
+<style>
+#map {
+  height: 200px;
+  width: 600px;
+}
+</style>
+  <script>
+    function initMap(){
+      let map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= @resume.latitude %>, lng: <%= @resume.longitude %> },
+      zoom: 12
+      
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API'] %>&callback=initMap" async defer></script>
+
+</div>
+    <div class="item-explain-box">
+      <span><%= @resume.answer %></span>
+    </div>
+
+    
+  
+  <%# /商品の概要 %>
+
+
+
+<%= render "shared/footer" %>

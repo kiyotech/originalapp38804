@@ -12,11 +12,16 @@ class OrdersController < ApplicationController
     if @order.valid?
       pay_item
       @order.save
-      redirect_to root_path
+      render :show
     else
       render :index
     end
   end
+
+  def show
+    @resume = Resume.find(params[:id])
+    @order = Order.find(params[:id])
+  end 
 
   private
 
