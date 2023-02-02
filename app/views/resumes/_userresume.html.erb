@@ -2,7 +2,7 @@
         <%= link_to resume_path(resume.id), method: :get do %>
         <% if current_user.id == @resume.user_id%>
         <div class='item-img-content'>
-          <%= image_tag resume.image, class: "item-img" %>
+          <%= image_tag resume.image, class: "item-img" if resume.image.attached?%>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>

@@ -1,7 +1,7 @@
 <li class='list'>
         <%= link_to resume_path(resume.id), method: :get do %>
         <div class='item-img-content'>
-          <%= image_tag resume.image, class: "item-img" %>
+          <%= image_tag resume.image, class: "item-img" if resume.image.attached? %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
@@ -10,7 +10,7 @@
           <div class='item-price'>
             <span><%= resume.price.to_s(:delimited) %>円</span>
             <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon"  if resume.image.attached?%>
+              <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
             </div>
           </div>

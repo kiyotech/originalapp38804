@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
-    @resumes = Resume.all
+    @resumes = Resume.all.includes(:user).order('created_at DESC')
   end
 
   def edit
