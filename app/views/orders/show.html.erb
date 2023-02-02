@@ -9,7 +9,7 @@
       <%= @resume.user.nickname %>
     </h2>
     <div class="item-img-content">
-      <%= image_tag @resume.image ,class:"item-box-img" if resume.image.attached? %>
+      <%= image_tag @resume.image ,class:"item-box-img" if @resume.image.attached? %>
     </div>
     <div class="item-price-box">
       <span class="item-price">

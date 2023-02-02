@@ -20,8 +20,9 @@
     <div class="item-explain-box">
       <span><%= @resume.resume_text %></span>
     </div>
-    <div class="attention">※※ここから下は出品者と購入にしか見えません※※</div>
+    
 <% if user_signed_in? %>
+<div class="attention">※※ここから下は出品者と購入にしか見えません※※</div>
   <% if current_user.id == @resume.user_id %>
     <div class="item-explain-box">
       <span><%= @resume.point_address %></span>
