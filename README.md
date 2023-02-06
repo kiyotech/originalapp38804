@@ -82,8 +82,18 @@ Basic認証パスワード：3333
 # 実装した機能についての画像やGIFおよびその説明
 
 ---
+Google Map表示
 [![Image from Gyazo](https://i.gyazo.com/f930faf5988d3d0160818fef532c82f3.png)](https://gyazo.com/f930faf5988d3d0160818fef532c82f3)
 テックキャンプでは習っていないgoogle map APIを使い出品、編集、購入後画面へ地図を表示させました。
+
+ユーザー新規登録
+[![Image from Gyazo](https://i.gyazo.com/8900befb9a42438335fe116953ca5648.gif)](https://gyazo.com/8900befb9a42438335fe116953ca5648)
+
+釣果新規投稿
+[![Image from Gyazo](https://i.gyazo.com/c9b44c928d8661f0d18f8dcb073f6495.gif)](https://gyazo.com/c9b44c928d8661f0d18f8dcb073f6495)
+
+釣果購入
+[![Image from Gyazo](https://i.gyazo.com/8fd7b4a73c4d4f411862cd5424ad5b57.gif)](https://gyazo.com/8fd7b4a73c4d4f411862cd5424ad5b57)
 
 # 実装予定の機能
 
