@@ -110,7 +110,7 @@ Google Map表示
 
 # データベース設計
 ---
-[![Image from Gyazo](https://i.gyazo.com/a1b57c37f24f7b116fb4aa38ad8a34f0.png)](https://gyazo.com/a1b57c37f24f7b116fb4aa38ad8a34f0)
+[![Image from Gyazo](https://i.gyazo.com/f35d3bbdf865d62deda6a40469e2da17.png)](https://gyazo.com/f35d3bbdf865d62deda6a40469e2da17)
 
 # 画面遷移図
 
